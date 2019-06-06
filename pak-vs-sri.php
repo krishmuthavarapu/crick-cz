@@ -90,14 +90,16 @@
   <section class="mask rgba-black-light overflow-hidden sect" style=" background-color: rgba(0,0,0,0.3);">
     <div class="container">
       <?php
- if (isset($_POST['save'])) {
-  $sql = "INSERT INTO users (username, email, number, location, team, matchd)
-    VALUES ('" . $_POST["username"] . "','" . $_POST["email"] . "', '" . $_POST["number"] . "','" . $_POST["location"] . "', '" . $_POST["team"] . "', '" . $_POST["matchd"] . "')";
 
-  $result = mysqli_query($conn, $sql);
+      if (isset($_POST['save'])) {
+        $mysqltime = date_create()->format('Y-m-d H:i:s'); 
+        $sql = "INSERT INTO users (username, email, number, location, team, matchd, date)
+          VALUES ('" . $_POST["username"] . "','" . $_POST["email"] . "', '" . $_POST["number"] . "','" . $_POST["location"] . "', '" . $_POST["team"] . "', '" . $_POST["matchd"] . "', '".$mysqltime."')";
 
-  header('Location: thank.php');
-}
+        $result = mysqli_query($conn, $sql);
+
+        header('Location: thank.php');
+      }
 
       ?>
       <form class="" action="" method="post">
@@ -143,21 +145,20 @@
         </div>
 
         <div class="row justify-content-center d-flex mt-3">
-        <div class="col-12 mb-sm-2 text-center">
-          <textarea name="matchd" class="white-text text-center" readonly=readonly>Match on Thu 6th June. Trent Bridge, Nottingham</textarea>
+          <div class="col-12 mb-sm-2 text-center">
+          <textarea name="matchd" class="white-text text-center" readonly=readonly>Match on Fri 7th June. County Ground, Bristol</textarea>
             <!-- <small class="white-text " name="match">Match on Fri 7th June. County Ground, Bristol</small> -->
 
           </div>
-          
           <div class="col-4 col-sm-4  text-center ">
             <div>
-              <img src="img/team/aus.png" width="250px" class="img-fluid hoverable" alt="" />
+              <img src="img/team/pak.png" width="250px" class="img-fluid hoverable" alt="" />
             </div>
             <button style="" type="button" class="btn btn-primary btn-mb mt-lg-4" onclick="document.getElementById('defaultUnchecked').click()">
-              Australia
+              Pakistan
             </button>
             <div class="custom-control custom-radio radio-b">
-              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="team" value="Australia" required />
+              <input type="radio" class="custom-control-input" id="defaultUnchecked" name="team" value="pakistan" required />
               <label class="custom-control-label" for="defaultUnchecked"></label>
             </div>
           </div>
@@ -172,13 +173,13 @@
 
           <div class="col-4 col-sm-4 text-center">
             <div class="">
-              <img src="img/team/wi.png" width="250px" class="img-fluid hoverable" alt="" />
+              <img src="img/team/sri.png" width="250px" class="img-fluid hoverable" alt="" />
             </div>
             <button style="" type="button" class="btn btn-primary mt-lg-4 btn-mb" onclick="document.getElementById('defaultChecked').click()">
-              West Indies
+              Srilanka
             </button>
             <div class="custom-control custom-radio radio-b">
-              <input type="radio" class="custom-control-input" id="defaultChecked" name="team" value="west indies" required />
+              <input type="radio" class="custom-control-input" id="defaultChecked" name="team" value="Srilanka" required />
               <label class="custom-control-label" for="defaultChecked"></label>
             </div>
           </div>
@@ -191,63 +192,6 @@
     </div>
   </section>
   <!-- Navbar -->
-
-  <!-- Navbar -->
-
-  <!-- Full Page Intro -->
-  <!-- <div class="view" style="background-image: url('img/bat.jpg'); background-repeat: no-repeat; background-size: cover;">
-
-    <div class="mask rgba-black-light justify-content-center align-items-center">
-
-
-      <div class="text-center white-text mx-5 mt-5 wow fadeIn">
-        <h1 class="mb-2">
-          <strong>Guess the winner</strong>
-        </h1>
-
-        <p>
-          <strong>Best & free guide of responsive web design</strong>
-        </p>
-        <small>Sat 4th June, Sophia Gardens</small>
-        <div class="row ">
-          <div class="col-4 text-center">
-            <div>
-                <img src="img/team/ind.png" class="img-fluid" alt="">
-                <button type="button" class="btn btn-elegant">Elegant</button>
-            </div>
-            
-          </div>
-          <div class="col-4 text-center">
-              <div>
-                  <div>
-                      <img src="img/team/cup.png" class="img-fluid" alt="">
-                  </div>              
-                </div>
-          </div>
-          
-          <div class="col-4 text-center">
-            <div>
-                <img src="img/team/ran.png"class="img-fluid" alt="">
-                <button type="button" class="btn btn-elegant">Elegant</button>
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div> -->
-  <!-- Full Page Intro -->
-
-  <!--Main layout-->
-
-  <!--Main layout-->
-
-  <!--Footer-->
-
-  <!--/.Footer-->
   <script>
 
   </script>
