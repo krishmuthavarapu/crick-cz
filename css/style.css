@@ -16,23 +16,10 @@ body,
   .navbar {
     background-color: #1C2331; } }
 
-/* Footer color for sake of consistency with Navbar */
-.page-footer {
-  background-color: #1C2331; }
-  @font-face {
-    font-family: 'Ultra Fresh';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Ultra Fresh'), url('Ultra Fresh.ttf') format('ttf');
-    }
-    @font-face {
-      font-family: 'ultra';
-      src: url('ultra.ttf')  format('truetype'), /* Safari, Android, iOS */
-           
-    }
+
     body{
-      font-family: ultra ;
-    }
+      font-family: 'Lato', sans-serif;   
+     }
     textarea {
       background: 0;
       border: 0;

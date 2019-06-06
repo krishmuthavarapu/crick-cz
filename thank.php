@@ -39,9 +39,8 @@
       <!-- Content -->
       <div class="text-center white-text mx-5 wow fadeIn">
         <h1 class="mb-4">
-          <strong>Thank You For Participating</strong>
+          <strong>Thank You For Participating!</strong>
         </h1>
-        <p>Hope you will get lucky popcorn</p>
 
 
         <!-- Content -->
