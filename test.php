@@ -187,40 +187,43 @@
             }
 
             ?>
+
+            <div class="text-center white-text mx-2 mt-lg-5 mt-3 wow fadeIn">
+                <img src="img/logo.png" class="logo-pop bg-transparent" alt="" />
+
+                <h1 class="mb-0 mt-sm-5 font-weight-bolder h1-head ">
+                    <strong>Predict the winner now</strong>
+                </h1>
+
+                <p>
+                    <strong>and grab a bucket of US popcorn for free everyday</strong>
+                </p>
+
+            </div>
+            <?php
+      while ($rowPagesActive  = mysqli_fetch_array($sqlPagesActive)) {
+        ?>
             <form class="" action="" method="post">
-
-                <div class="text-center white-text mx-2 mt-lg-5 mt-3 wow fadeIn">
-                    <img src="img/logo.png" class="logo-pop bg-transparent" alt="" />
-
-                    <h1 class="mb-0 mt-sm-5 font-weight-bolder h1-head ">
-                        <strong>Predict the winner now</strong>
-                    </h1>
-
-                    <p>
-                        <strong>and grab a bucket of US popcorn for free everyday</strong>
-                    </p>
-
-                </div>
                 <div class="container mt-0 pt-0 ">
                     <!-- Grd row -->
                     <div class="form-row mt-lg-5 mt-3">
                         <!-- Grid column -->
-                        <div class="col-lg-3 col-6 col-md-6 pl-lg-3 pr-lg-3 p-1">
+                        <div class="col-lg-3 pl-lg-3 pr-lg-3 p-1">
                             <!-- Default input -->
-                            <input type="text" class="form-control" placeholder="name" name="username" required />
+                            <input type="text" class="form-control" placeholder="Name" name="username" required />
                         </div>
                         <!-- Grid column -->
 
                         <!-- Grid column -->
-                        <div class="col-lg-3 col-6 col-md-6 pl-lg-3 pr-lg-3 p-1">
+                        <div class="col-lg-3 pl-lg-3 pr-lg-3 p-1">
                             <!-- Default input -->
-                            <input type="text" class="form-control" placeholder="email" name="email" required />
+                            <input type="text" class="form-control" placeholder="Email" name="email" required />
                         </div>
-                        <div class="col-lg-3 col-6 col-md-6 pl-lg-3 pr-lg-3 p-1">
+                        <div class="col-lg-3 pl-lg-3 pr-lg-3 p-1">
                             <!-- Default input -->
                             <input type="text" class="form-control" placeholder="Phone number" name="number" required />
                         </div>
-                        <div class="col-lg-3 col-6 col-md-6 pl-lg-3 pr-lg-3 p-1">
+                        <div class="col-lg-3 pl-lg-3 pr-lg-3 p-1">
                             <!-- Default input -->
                             <input type="text" class="form-control" name="location" placeholder="location" required />
                         </div>
@@ -230,20 +233,22 @@
                 </div>
 
                 <div class="row justify-content-center d-flex mt-3">
-                    <div class="col-12 mb-sm-2 text-center">
-                        <textarea name="matchd" class="white-text text-center" readonly=readonly>Match on Fri 7th June. County Ground, Bristol</textarea>
+                    <div class="col-12 mb-sm-2 text-center d-none d-lg-block">
+                        <textarea name="matchd" class="white-text text-center" readonly=readonly><?php echo $rowPagesActive["title"]; ?></textarea>
                         <!-- <small class="white-text " name="match">Match on Fri 7th June. County Ground, Bristol</small> -->
 
                     </div>
                     <div class="col-4 col-sm-4  text-center ">
                         <div>
-                            <img src="img/team/pak.png" width="250px" class="img-fluid hoverable" alt="" />
+                            <?php
+                            echo "<img src='uploads/" . $rowPagesActive["thumbnail"] . "' class='img-fluid hoverable' width='250px' alt=''>";
+                            ?>
                         </div>
                         <button style="" type="button" class="btn btn-primary btn-mb mt-lg-4" onclick="document.getElementById('defaultUnchecked').click()">
-                            Pakistan
+                            <?php echo $rowPagesActive["team1"]; ?>
                         </button>
                         <div class="custom-control custom-radio radio-b">
-                            <input type="radio" class="custom-control-input" id="defaultUnchecked" name="team" value="pakistan" required />
+                            <input type="radio" class="custom-control-input" id="defaultUnchecked" name="team" value="<?php echo $rowPagesActive["team1"]; ?>" required />
                             <label class="custom-control-label" for="defaultUnchecked"></label>
                         </div>
                     </div>
@@ -258,13 +263,16 @@
 
                     <div class="col-4 col-sm-4 text-center">
                         <div class="">
-                            <img src="img/team/sri.png" width="250px" class="img-fluid hoverable" alt="" />
+                            <?php
+                            echo "<img src='uploads/" . $rowPagesActive["thumbnail1"] . "' class='img-fluid hoverable' width='250px' alt=''>";
+                            ?>
                         </div>
                         <button style="" type="button" class="btn btn-primary mt-lg-4 btn-mb" onclick="document.getElementById('defaultChecked').click()">
-                            Srilanka
+                            <?php echo $rowPagesActive["team2"]; ?>
+
                         </button>
                         <div class="custom-control custom-radio radio-b">
-                            <input type="radio" class="custom-control-input" id="defaultChecked" name="team" value="Srilanka" required />
+                            <input type="radio" class="custom-control-input" id="defaultChecked" name="team" value="<?php echo $rowPagesActive["team2"]; ?>" required />
                             <label class="custom-control-label" for="defaultChecked"></label>
                         </div>
                     </div>
@@ -275,6 +283,21 @@
             </form>
 
         </div>
+        <div class="" id="portfolioModal<?php echo $rowPagesActive["id"]; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+
+<h2>
+  <?php
+  // echo $rowPagesActive["title"]; 
+  ?>
+</h2>
+
+
+
+</div>
+
+<?php
+}
+?>
     </section>
     <!-- Navbar -->
     <script>

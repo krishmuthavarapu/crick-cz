@@ -1,0 +1,30 @@
+/* Required height of parents of the Full Page Intro and Intro itself */
+html,
+body,
+.view {
+  height: 100%; }
+
+/* Navbar animation */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.top-nav-collapse {
+  background-color: #1C2331; }
+
+/* Adding color to the Navbar on mobile */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #1C2331; } }
+
+
+    body{
+      font-family: 'Lato', sans-serif;   
+     }
+    textarea {
+      background: 0;
+      border: 0;
+      width: 100%;
+      overflow: visible;
+      outline: 0;
+      height: auto;
+  }
